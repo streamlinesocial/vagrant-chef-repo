@@ -1,0 +1,11 @@
+{
+    "id": "artoo",
+    "password": "themaker",
+    "groups": [ "artoo", "apache" ],
+    "shell": "\/bin\/bash",
+    "home": "\/home\/artoo",
+    "comment": "",
+    "ssh_keys": [
+        "--Public-Key-Here-To-Enable-Passwordless-Logins--"
+    ]
+}

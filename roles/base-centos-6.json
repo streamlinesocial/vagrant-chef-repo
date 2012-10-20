@@ -1,0 +1,31 @@
+{
+    "name": "base-centos-6",
+    "description": "Base rules for CentOS 6.x Servers",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "run_list": [
+        "recipe[user::data_bag]",
+        "recipe[sls_utils::centos_profile]",
+        "recipe[yum]",
+        "recipe[yum::ius]",
+        "recipe[yum::epel]",
+        "recipe[selinux::permissive]",
+        "recipe[iptables]",
+        "recipe[sls_utils::port_ssh]",
+        "recipe[git]"
+    ],
+    "env_run_lists" : {
+        "production" : [],
+        "preprod" : [],
+        "dev": [],
+        "test": []
+    },
+    "default_attributes": {},
+    "override_attributes": {
+        "yum": {
+            "ius_release": "1.0-10"
+        }
+    }
+}
+
+

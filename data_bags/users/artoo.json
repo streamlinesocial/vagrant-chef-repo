@@ -1,0 +1,9 @@
+{
+    "id": "artoo",
+    "groups": [ "artoo", "apache" ],
+    "shell": "\/bin\/bash",
+    "home": "\/home\/artoo",
+    "comment": "",
+    "ssh_keys": [
+    ]
+}

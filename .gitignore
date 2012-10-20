@@ -1,0 +1,17 @@
+# ignore vendor cookbooks
+cookbooks
+
+# ignore project files
+repos/*
+srv/*
+!repos/README.md
+!srv/README.md
+
+# ignore tmp / cache
+tmp
+
+# we use vagrant lots of times, don't need that here
+.vagrant
+
+# ignore little chef auth file
+auth.cfg

@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+# this is used for general cookbooks that don't have git repos clearly defined
+site 'http://community.opscode.com/api/v1'
+
+# cookbook 'chef-client'
+
+# if fix's are required, fork from https://github.com/opscode/cookbooks,
+# fix, and use that repo url in the package definition
+# be nice, and submit a pull request!
+
+cookbook 'build-essential'
+cookbook 'iptables', '>= 0.10.0'
+cookbook 'selinux', '>= 0.5.2'
+cookbook 'openssl', '>= 1.0.0'
+cookbook 'runit', '>= 0.15.0'
+cookbook 'user'
+cookbook 'git', '>= 1.0.0'
+cookbook 'yum', '>= 0.6.0'
+cookbook 'zsh'
+cookbook 'oh-my-zsh', :git => 'https://github.com/cburyta/chef-oh-my-zsh.git', :ref => 'master'
+
+# lamp stack
+cookbook 'apache2', '>= 1.0.6'
+cookbook 'mysql', :git => 'https://github.com/streamlinesocial/mysql.git'
+cookbook 'php', :git => 'https://github.com/streamlinesocial/php.git'
+
+# get from github
+cookbook 'sls_utils', :git => 'https://github.com/streamlinesocial/cookbook-sls_utils', :ref => 'master'
+# cookbook 'drush', :git => 'https://github.com/msonnabaum/chef-drush.git'

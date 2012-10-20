@@ -1,0 +1,41 @@
+{
+    "name": "lamp-server",
+    "description": "Basic LAMP stack server",
+    "chef_type": "role",
+    "json_class": "Chef::Role",
+    "run_list": [
+        "recipe[sls_utils::port_http]",
+        "recipe[mysql::client]",
+        "recipe[mysql::server]",
+        "recipe[php]",
+        "recipe[apache2]"
+    ],
+    "env_run_lists" : {
+        "production" : [],
+        "preprod" : [],
+        "dev": [],
+        "test": []
+    },
+    "default_attributes": {
+        "apache2": {
+            "listen_ports": [ "80" ]
+        },
+        "mysql": {
+            "server_root_password": "",
+            "server_repl_password": "",
+            "server_debian_password": ""
+        },
+        "php": {
+            "install_method": "package-ius",
+            "directives": {
+                "date.timezone": "GMT",
+                "display_errors": "On",
+                "short_open_tag": "Off",
+                "upload_max_filesize": "5M",
+                "post_max_size": "5M",
+                "memory_limit": "128M"
+            }
+        }
+    },
+    "override_attributes": {}
+}
