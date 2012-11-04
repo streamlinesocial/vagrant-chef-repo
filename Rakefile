@@ -8,14 +8,8 @@ directory "site-cookbooks"
 directory "cookbooks"
 directory "ssh-keys"
 
-file 'auth.cfg' => ['littlechef:init'] do
-    puts "auth.cfg created"
-end
-
-# files need to be used before they are triggered
-file 'Cheffile' do
-    FileUtils.cp 'scripts/misc/Cheffile.example', 'Cheffile'
-    puts "Copied Cheffile.example to Cheffile"
+file 'config.cfg' => ['littlechef:init'] do
+    puts "config.cfg created"
 end
 
 # @TODO: Test to ensure this runs in windows cmd
@@ -29,7 +23,7 @@ end
 # end
 
 desc "inits folders and initial deployment of the cookbooks"
-task "init"=> ['site-cookbooks', 'cookbooks', 'auth.cfg', 'librarian:update'] do
+task "init"=> ['site-cookbooks', 'cookbooks', 'config.cfg', 'librarian:update'] do
     # default task is to list them
 end
 

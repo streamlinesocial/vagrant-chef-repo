@@ -1,6 +1,0 @@
-{
-    "id": "default",
-    "repository": "git@repo_url.com:repo_name",
-    "public_key": "--Public-Key-Here--",
-    "private_key": "--Private-Key-Here-Replace-LineBreaks-Wit-\n--"
-}

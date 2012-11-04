@@ -14,4 +14,4 @@ tmp
 .vagrant
 
 # ignore little chef auth file
-auth.cfg
+config.cfg
