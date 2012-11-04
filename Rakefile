@@ -35,13 +35,13 @@ end
 namespace 'deploy' do
     desc "deploy local dev server"
     task "dev" do
-        Rake::Task['littlechef:deploy'].invoke('jpef.dev')
+        Rake::Task['littlechef:deploy'].invoke('local.dev')
     end
 
-    desc "deploy staging server"
-    task "stage" do
-        Rake::Task['littlechef:deploy'].invoke('jpef.strsocial.com')
-    end
+    # desc "deploy staging server"
+    # task "stage" do
+    #     Rake::Task['littlechef:deploy'].invoke('local.strsocial.com')
+    # end
 end
 
 desc 'install deps'
