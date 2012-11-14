@@ -32,7 +32,7 @@ Vagrant::Config.run do |config|
 
             # setup to run the node for dev in the node list
             chef.add_role "note_dontAddToRunListInVagrantFile"
-            node = JSON.parse(File.read("nodes/#{webserver_config.vm.host_name}.json"))
+            node = JSON.parse(File.read(File.join(File.dirname(__FILE__), "nodes/local.dev.json")))
             node["run_list"] = node.delete("run_list")
             chef.json.merge!(node)
         end
