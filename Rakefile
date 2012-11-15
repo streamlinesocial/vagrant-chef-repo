@@ -48,9 +48,14 @@ desc 'install deps'
 task 'install_deps' do
     puts "Warning: sudo may be required"
     sh "gem install librarian --no-ri --no-rdoc"
+    sh "vagrant gem install vagrant-hostmaster --no-ri --no-rdoc"
+end
+
+desc 'install deps for deploy'
+task 'install_deps_deploy' do
+    puts "Warning: sudo may be required"
     sh "sudo pip install --upgrade git+https://github.com/tobami/littlechef.git"
     sh "gem install foodcritic --no-ri --no-rdoc"
-    sh "vagrant gem install vagrant-hostmaster --no-ri --no-rdoc"
 end
 
 namespace 'librarian' do
