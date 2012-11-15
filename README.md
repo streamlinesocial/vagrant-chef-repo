@@ -36,7 +36,7 @@ Deploy
 Use littlechef's fix command to deploy to a server.
 
     # add user / pass for server
-    vi auth.cfg
+    vi config.cfg
 
     fix node:IPADDRESS deploy_chef
     fix node:IPADDRESS
