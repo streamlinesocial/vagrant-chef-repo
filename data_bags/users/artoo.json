@@ -1,9 +1,11 @@
 {
     "id": "artoo",
     "groups": [ "artoo", "apache" ],
-    "shell": "\/bin\/bash",
     "home": "\/home\/artoo",
-    "comment": "",
+    "shell": "\/bin\/zsh",
+    "manage_home": true,
+    "oh-my-zsh-theme": "gentoo",
+    "ssh_keygen": false,
     "ssh_keys": [
     ]
 }

@@ -4,15 +4,17 @@
     "chef_type": "role",
     "json_class": "Chef::Role",
     "run_list": [
-        "recipe[user::data_bag]",
-        "recipe[sls_utils::centos_profile]",
         "recipe[yum]",
         "recipe[yum::ius]",
         "recipe[yum::epel]",
+        "recipe[sls_utils::centos_profile]",
         "recipe[selinux::permissive]",
         "recipe[iptables]",
         "recipe[sls_utils::port_ssh]",
-        "recipe[git]"
+        "recipe[git]",
+        "recipe[zsh]",
+        "recipe[user::data_bag]",
+        "recipe[oh-my-zsh]"
     ],
     "env_run_lists" : {
         "production" : [],
