@@ -13,9 +13,7 @@ Vagrant::Config.run do |config|
         webserver_config.vm.host_name = 'local.dev'
 
         # use vagrant-hostmaster if we can
-        if defined? webserver_config.hosts
-            webserver_config.hosts.aliases = %w(www.local.dev)
-        end
+        webserver_config.hosts.aliases = %w(www.local.dev) if Vagrant.const_defined?(:Hostmaster)
 
         # required for nfs share
         webserver_config.vm.network :hostonly, "192.168.33.10"
