@@ -6,6 +6,10 @@ Required
 - Ruby {http://www.ruby-lang.org/en/downloads}
 - RubyGems {http://rubygems.org/pages/download}
 - Rake {http://rubygems.org/gems/rake}
+
+Optional (for deployments)
+==========================
+
 - PIP {http://www.pip-installer.org}
 
 Install deps
