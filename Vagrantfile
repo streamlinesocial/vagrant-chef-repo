@@ -1,6 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+
+# helper to decide if we are on windows or *nix
+require 'ffi'
+use_nfs_shares = FFI::Platform::IS_WINDOWS ? false: true
+
 Vagrant::Config.run do |config|
     # Setup includes the chef-server among other things...
     # yum install chef-server
@@ -20,7 +25,7 @@ Vagrant::Config.run do |config|
 
         # list a folder here where project usually get deployed to
         # webserver_config.vm.share_folder "repos", "/var/www/vhosts", "./repos", :owner => "apache", :group => "apache", :create => true
-        # webserver_config.vm.share_folder "server-vhosts", "/var/www/vhosts", "./srv", :nfs => true, :create => true
+        webserver_config.vm.share_folder "server-vhosts", "/var/www/vhosts", "./vhosts", :nfs => use_nfs_shares, :create => true
 
         # provision the virtual machine
         webserver_config.vm.provision :chef_solo do |chef|

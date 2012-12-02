@@ -4,6 +4,7 @@ cookbooks
 # ignore project files
 repos/*
 srv/*
+vhosts/*
 !repos/README.md
 !srv/README.md
 

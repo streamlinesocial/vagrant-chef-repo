@@ -19,7 +19,7 @@ cookbook 'user',                '>= 0.3.0'
 cookbook 'selinux',             '>= 0.5.2'
 cookbook 'sls_utils',           :ref => 'master',   :git => 'https://github.com/streamlinesocial/cookbook-sls_utils'
 cookbook 'sudo',                :ref => 'master',   :git => 'https://github.com/streamlinesocial/sudo.git'
-cookbook 'yum',                 '= 1.0.0'
+cookbook 'yum',                 '= 1.0.0' # yum 2.0.x gives problems with ius repo
 cookbook 'zsh',                 '>= 1.0.0'
 
 # lamp stack
@@ -28,8 +28,8 @@ cookbook 'mysql',               :ref => 'master',   :git => 'https://github.com/
 cookbook 'php',                 :ref => 'master',   :git => 'https://github.com/streamlinesocial/php.git'
 
 # app specific
-# cookbook 'application'
-# cookbook 'application_php'
+# cookbook 'application',         :ref => '1.0.4',    :git => 'https://github.com/opscode-cookbooks/application.git'
+# cookbook 'application_php',     :ref => '1.0.4',    :git => 'https://github.com/opscode-cookbooks/application_php.git'
 
 # symfony apps
 # cookbook 'composer',            :ref => 'master',   :git => 'https://github.com/streamlinesocial/chef-composer.git'

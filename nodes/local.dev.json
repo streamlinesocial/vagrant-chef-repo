@@ -2,7 +2,8 @@
     "ipaddress": "192.168.0.10",
     "run_list": [
         "role[base-centos-6]",
-        "role[lamp-server]"
+        "role[lamp-server]",
+        "recipe[sandbox]"
     ],
     "users": [
         "artoo", "vagrant"
