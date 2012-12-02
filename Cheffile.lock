@@ -1,51 +1,35 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apache2 (1.3.0)
-    application (1.0.4)
-      apache2 (>= 0.0.0)
-      gunicorn (>= 0.0.0)
-      passenger_apache2 (>= 0.0.0)
-      php (>= 0.0.0)
-      python (>= 1.0.6)
-      runit (>= 0.0.0)
-      tomcat (>= 0.0.0)
-      unicorn (>= 0.0.0)
-    application_php (1.0.4)
-      apache2 (>= 0.0.0)
-      php (>= 0.0.0)
+    apache2 (1.3.2)
     build-essential (1.2.0)
     dmg (1.0.0)
-    git (1.0.2)
+    git (2.0.0)
       build-essential (>= 0.0.0)
       dmg (>= 0.0.0)
       runit (>= 0.0.0)
       yum (>= 0.0.0)
-    gunicorn (1.1.0)
-      python (>= 0.0.0)
     iptables (0.10.0)
-    java (1.6.0)
     openssl (1.0.0)
-    passenger_apache2 (1.0.0)
-      apache2 (>= 1.0.4)
-      build-essential (>= 0.0.0)
-    python (1.0.8)
-      build-essential (>= 0.0.0)
-      yum (>= 0.0.0)
-    runit (0.15.0)
+    runit (0.16.0)
     selinux (0.5.2)
-    tomcat (0.11.0)
-      java (>= 0.0.0)
-    unicorn (1.1.0)
     user (0.3.0)
     xml (1.0.4)
     yum (1.0.0)
     zsh (1.0.0)
 
 GIT
-  remote: https://github.com/cburyta/chef-oh-my-zsh.git
+  remote: https://github.com/streamlinesocial/chef-composer.git
   ref: master
-  sha: ca5e38a7211e484d56e0ead92076afcbe14c9879
+  sha: 43c386c3f627d82b4bdb53866f2c6329dd146353
+  specs:
+    composer (0.0.1)
+      php (>= 0.0.0)
+
+GIT
+  remote: https://github.com/streamlinesocial/chef-oh-my-zsh.git
+  ref: master
+  sha: e00385a7dd04c88c684cdf1e05426a1e1e683452
   specs:
     oh-my-zsh (0.4.2)
       git (>= 0.0.0)
@@ -58,6 +42,13 @@ GIT
   sha: 22e68ab0cfa27c59541d3c0b375932dd6618144f
   specs:
     sls_utils (0.0.0)
+
+GIT
+  remote: https://github.com/streamlinesocial/cookbook-symfony2.git
+  ref: master
+  sha: c7e4abd217fe847075c9ed62aa6ae7c1e088f782
+  specs:
+    symfony2 (1.0.0)
 
 GIT
   remote: https://github.com/streamlinesocial/mysql.git
@@ -78,21 +69,28 @@ GIT
       mysql (>= 0.0.0)
       xml (>= 0.0.0)
 
+GIT
+  remote: https://github.com/streamlinesocial/sudo.git
+  ref: master
+  sha: c73bb8f58d4fa54ac87375ccd9609fa09932d3a3
+  specs:
+    sudo (1.2.0)
+
 DEPENDENCIES
-  apache2 (>= 1.0.6)
-  application (>= 0)
-  application_php (>= 0)
-  build-essential (>= 0)
-  git (>= 1.0.0)
+  apache2 (>= 1.3.2)
+  build-essential (>= 1.2.0)
+  composer (>= 0)
+  git (>= 2.0.0)
   iptables (>= 0.10.0)
   mysql (>= 0)
   oh-my-zsh (>= 0)
   openssl (>= 1.0.0)
   php (>= 0)
-  runit (>= 0.15.0)
   selinux (>= 0.5.2)
   sls_utils (>= 0)
-  user (>= 0)
-  yum (>= 0.6.0)
-  zsh (>= 0)
+  sudo (>= 0)
+  symfony2 (>= 0)
+  user (>= 0.3.0)
+  yum (= 1.0.0)
+  zsh (>= 1.0.0)
 

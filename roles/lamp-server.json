@@ -4,10 +4,11 @@
     "chef_type": "role",
     "json_class": "Chef::Role",
     "run_list": [
+        "recipe[yum::ius]",
         "recipe[sls_utils::port_http]",
         "recipe[mysql::client]",
         "recipe[mysql::server]",
-        "recipe[php]",
+        "recipe[php::package]",
         "recipe[apache2]"
     ],
     "env_run_lists" : {
@@ -26,7 +27,8 @@
             "server_debian_password": ""
         },
         "php": {
-            "install_method": "package-ius",
+            "install_method": "package",
+            "packages": ["php53u", "php53u-devel", "php53u-cli", "php53u-pear"],
             "directives": {
                 "date.timezone": "GMT",
                 "display_errors": "On",

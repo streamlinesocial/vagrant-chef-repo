@@ -6,7 +6,6 @@
     "run_list": [
         "recipe[yum]",
         "recipe[yum::ius]",
-        "recipe[yum::epel]",
         "recipe[sls_utils::centos_profile]",
         "recipe[selinux::permissive]",
         "recipe[iptables]",
@@ -14,7 +13,7 @@
         "recipe[git]",
         "recipe[zsh]",
         "recipe[user::data_bag]",
-        "recipe[oh-my-zsh]"
+        "recipe[oh-my-zsh::shared]"
     ],
     "env_run_lists" : {
         "production" : [],
@@ -23,11 +22,7 @@
         "test": []
     },
     "default_attributes": {},
-    "override_attributes": {
-        "yum": {
-            "ius_release": "1.0-10"
-        }
-    }
+    "override_attributes": {}
 }
 
 
