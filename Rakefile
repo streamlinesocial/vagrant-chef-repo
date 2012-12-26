@@ -72,22 +72,27 @@ namespace 'setup' do
     end
 
     # set setup default to devel
-    task :all => ['devel']
+    task :all => ['devel', 'deploy']
 end
 
 # default for setup namespace
-task :setup => 'setup:all'
+task :setup => 'setup:devel'
 
 namespace :cookbook do
     # see https://github.com/applicationsonline/librarian-chef
-    desc 'install cookbooks using librarian-chef'
+    desc 'update cookbooks using librarian-chef Cheffile'
     task :update do
         sh 'librarian-chef update'
+    end
+
+    desc 'install cookbooks using librarian-chef Cheffile.lock'
+    task :update do
+        sh 'librarian-chef install'
     end
 end
 
 # default for cookbook namespace
-task :cookbook => 'cookbook:update'
+task :cookbook => 'cookbook:install'
 
 namespace :littlechef do
     desc "runs the 'fix new_kitchen' command to init the kitchen"
