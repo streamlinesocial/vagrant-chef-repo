@@ -21,7 +21,11 @@
         "dev": [],
         "test": []
     },
-    "default_attributes": {},
+    "default_attributes": {
+        "yum": {
+            "epel_release": "6-8"
+        }
+    },
     "override_attributes": {}
 }
 
